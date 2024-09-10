@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     background: url(./imgs/main-background.png);
-    background-color: var(--background-black);
+    background-color: #050505ee;
     background-size: 100%;
     background-position: bottom 80% right 100%;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ button:hover {
     font-size: 35px;
 }
 
-.relative {
+.medium-font.relative {
     position: relative;
     top: 30px;
     margin-top: 12%;
