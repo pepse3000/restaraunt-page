@@ -53,6 +53,10 @@ button:hover {
     cursor: pointer;
 }
 
+button.active-button {
+    background-color: red;
+}
+
 .bc-hidden {
     background: 0;
     background-color: #111111;
@@ -298,6 +302,9 @@ li:hover {
 
 .contact-bk {
     background: url(./imgs/contact-background.png);
+    background-color: #111111;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
 }
 
 .right-contact .menu-text-medium {
