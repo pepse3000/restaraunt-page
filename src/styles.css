@@ -8,6 +8,7 @@
     --primary-color: #FACE8D;
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -124,6 +125,32 @@ button.active-button {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+.page {
+    opacity: 0;
+    transform: scale(0.95);
+    transform: translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(1);
+}
+
+.menu-page {
+    opacity: 0;
+    transform: scale(0.95);
+    transform: translateX(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-page.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transform: scale(1);
 }
 
 /* MENU BTN */
@@ -315,6 +342,7 @@ li:hover {
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    margin-right: 20px;
 }
 
 .right-contact p {

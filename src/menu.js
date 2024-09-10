@@ -4,7 +4,7 @@ export const MenuLoader = (function() {
     const loadMenuPage = function() {
         let body = document.querySelector("body");
         body.classList.add("bc-hidden");
-        
+
         let content = document.querySelector(".content");
         let menuPage = document.createElement("div");
         menuPage.classList.add("menu-page");
@@ -18,10 +18,8 @@ export const MenuLoader = (function() {
         createLeftContent(leftSideDiv);
         leftSideDiv.appendChild(navBar);
         menuPage.appendChild(leftSideDiv)
-        content.appendChild(menuPage);
 
         IndexPageLoader.addEventsToButtons();
-
 
         // Right side
         let rightSideDiv = document.createElement("div");
@@ -30,6 +28,11 @@ export const MenuLoader = (function() {
         createRightContent(rightSideDiv);
         menuPage.appendChild(rightSideDiv);
 
+        content.appendChild(menuPage);
+
+        setTimeout(() => {
+            menuPage.classList.add("visible");
+        }, 10);
     }
 
     const createLeftContent = function(element) {
