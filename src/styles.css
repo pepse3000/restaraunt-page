@@ -119,7 +119,8 @@ button:hover {
 
 /* MENU BTN */
 
-.menu-page {
+.menu-page,
+.contact-page {
     position: relative;
     color: var(--white-color);
     display: flex;
@@ -127,8 +128,11 @@ button:hover {
     height: 100vh;
 }
 
-.left-side {
+.menu-bk {
     background: url(./imgs/menu-background.png);
+}
+
+.left-side {
     background-color: #050505cc;
     background-size: 100%;
     background-position: bottom 80% right 100%;
@@ -283,4 +287,28 @@ li:hover {
     background: url(./imgs/veganburger.png);
     background-position: bottom 0% right 50%;
     background-size: 100%;
+}
+
+/* CONTACT BUTTON */
+
+.contact-bk {
+    background: url(./imgs/contact-background.png);
+}
+
+.right-contact .menu-text-medium {
+    font-size: 45px;
+}
+
+.right-contact {
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.right-contact p {
+    text-align: justify;
+}
+
+.right-contact button {
+    width: 50%;
 }
