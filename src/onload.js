@@ -2,6 +2,12 @@ import { MenuLoader } from "./menu.js";
 
 const IndexPageLoader = (function () {
     const loadIndexPage = function() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("bc-hidden")) {
+            body.classList.remove("bc-hidden");
+        }
+
         let content = document.querySelector(".content");
         let page = document.createElement("div");
         page.classList.add("page");
@@ -16,7 +22,21 @@ const IndexPageLoader = (function () {
         let buttons = document.querySelectorAll("button");
 
         buttons.forEach(el => {
-            el.addEventListener("click", clearPage)
+            if (el.textContent == "Restaraunt") {
+                el.addEventListener("click", () => {
+                    clearPage();
+                    loadIndexPage();
+                    return;
+                });
+            }
+
+            if (el.textContent == "Menu") {
+                el.addEventListener("click", () => {
+                    clearPage();
+                    MenuLoader.loadMenuPage();
+                    return;
+                })
+            }
         })
     }
 
@@ -70,14 +90,7 @@ const IndexPageLoader = (function () {
         }
     }
 
-    const createMenuPage = function() {
-        let content = document.querySelector(".content");
-
-        let rightSideDiv = document.createElement("div");
-        let leftSideDiv = document.createElement("div");
-    }
-
-    return { loadIndexPage };
+    return { loadIndexPage, createNavBar, addEventsToButtons };
 })();
 
 export { IndexPageLoader };
