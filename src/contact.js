@@ -31,10 +31,6 @@ export const ContactLoader = (function() {
         menuPage.appendChild(rightSideDiv);
 
         content.appendChild(menuPage);
-
-        setTimeout(() => {
-            menuPage.classList.add("visible");
-        }, 10);
     }
 
     const createLeftContent = function(element) {
