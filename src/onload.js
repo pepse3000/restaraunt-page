@@ -1,4 +1,5 @@
 import { MenuLoader } from "./menu.js";
+import { ContactLoader } from "./contact.js";
 
 const IndexPageLoader = (function () {
     const loadIndexPage = function() {
@@ -16,6 +17,10 @@ const IndexPageLoader = (function () {
         page.appendChild(createNavBar());
         addEventsToButtons();
         createMainContent(page);
+
+        setTimeout(() => {
+            page.classList.add("visible");
+        }, 10);
     }
 
     const addEventsToButtons = function() {
@@ -23,17 +28,28 @@ const IndexPageLoader = (function () {
 
         buttons.forEach(el => {
             if (el.textContent == "Restaraunt") {
-                el.addEventListener("click", () => {
+                el.addEventListener("click", e => {
                     clearPage();
                     loadIndexPage();
+                    addEventsToButtons();
                     return;
                 });
             }
 
             if (el.textContent == "Menu") {
-                el.addEventListener("click", () => {
+                el.addEventListener("click", e => {
                     clearPage();
                     MenuLoader.loadMenuPage();
+                    addEventsToButtons();
+                    return;
+                })
+            }
+
+            if (el.textContent == "Contact") {
+                el.addEventListener("click", e => {
+                    clearPage();
+                    ContactLoader.loadContactPage();
+                    addEventsToButtons();
                     return;
                 })
             }
